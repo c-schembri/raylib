@@ -226,8 +226,10 @@ void ToggleBorderlessWindowed(void)
                 // Set undecorated and topmost modes and flags
                 glfwSetWindowAttrib(platform.handle, GLFW_DECORATED, GLFW_FALSE);
                 CORE.Window.flags |= FLAG_WINDOW_UNDECORATED;
-                glfwSetWindowAttrib(platform.handle, GLFW_FLOATING, GLFW_TRUE);
-                CORE.Window.flags |= FLAG_WINDOW_TOPMOST;
+                // glfwSetWindowAttrib(platform.handle, GLFW_FLOATING, GLFW_TRUE);
+                // CORE.Window.flags |= FLAG_WINDOW_TOPMOST;
+                glfwSetWindowAttrib(platform.handle, GLFW_FLOATING, GLFW_FALSE);
+                CORE.Window.flags &= ~FLAG_WINDOW_TOPMOST;
 
                 // Get monitor position and size
                 int monitorPosX = 0;
